@@ -43,15 +43,14 @@ int pass() {
 }
 
 int main(void) {
-    size_t epoch = 0;
+    size_t epoch_idx = 0;
     int loop = 1;
     while (loop) {
         loop = pass();
-        epoch++;
+        epoch_idx++;
     }
-    epoch--;
 
-    printf("Finished fit in %zu epochs\nResulting weights:\n", epoch);
+    printf("Finished fit in %zu epochs\nResulting weights:\n", epoch_idx - 1);
 
     for (size_t weight_idx = 0; weight_idx < (DATA_COLS - 1); weight_idx++) {
         printf("w%zu = %f\n", weight_idx, weights[weight_idx]);
