@@ -3,6 +3,9 @@
 // adjust this if you want more inputs, not including bias and class
 #define N_INPUTS 2
 
+// the activation threshold, usually 0
+#define THRESHOLD 0
+
 // bias (x0, must be 1), x1, x2, ..., class (must be 1 or -1)
 #define DATA_COLS (N_INPUTS + 2)
 static double data[][DATA_COLS] = {
@@ -30,7 +33,7 @@ int pass() {
         }
 
         // get the sign of the sum to get the predicted class, the real class is the last column of data
-        int predicted_class = (weight_sum > 0) - (weight_sum < 0);
+        int predicted_class = (weight_sum > THRESHOLD) - (weight_sum < THRESHOLD);
         int real_class = (int) sample[DATA_COLS - 1];
 
         if (predicted_class != real_class) {
