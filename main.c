@@ -2,7 +2,7 @@
 
 #define DATA_COLS 4
 
-// bias (x0), x1, x2, class (1 or -1)
+// bias (x0, must be 1), x1, x2, ..., class (must be 1 or -1)
 static double data[][DATA_COLS] = {
     {1, 1, 4, -1},
     {1, 2, 9, 1},
