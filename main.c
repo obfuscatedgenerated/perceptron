@@ -49,6 +49,7 @@ int main(void) {
         loop = pass();
         epoch++;
     }
+    epoch--;
 
     printf("Finished fit in %zu epochs\nResulting weights:\n", epoch);
 
