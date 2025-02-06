@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// adjust this if you want more inputs
 #define DATA_COLS 4
 
 // bias (x0, must be 1), x1, x2, ..., class (must be 1 or -1)
@@ -13,7 +14,7 @@ static double data[][DATA_COLS] = {
 };
 static const size_t n_rows = (size_t) (sizeof (data) / sizeof (data)[0]);
 
-static double weights[DATA_COLS - 1] = {0, 0, 0};
+static double weights[DATA_COLS - 1];
 
 int pass() {
     int made_change = 0;
